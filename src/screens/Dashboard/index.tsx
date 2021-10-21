@@ -8,9 +8,9 @@ import {
   Footer,
 } from './styles'
 
-import { Timer } from '../components/Timer';
-import { TimePickerButton } from '../components/TimePickerButton'
-import { ActionButton } from '../components/ActionButton'
+import { Timer } from '../../components/Timer';
+import { TimePickerButton } from '../../components/TimePickerButton'
+import { ActionButton } from '../../components/ActionButton'
 
 export function Dashboard() {
   return (

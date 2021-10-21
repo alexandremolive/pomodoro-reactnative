@@ -1,9 +1,9 @@
 export default {
   colors: {
     primary: '#009ffd',
-    secondary: '#EEFCFC',
+    secondary: '#EDF2EF',
     shape: '#ffffff',
-    background: '#0D1626',
+    background: '#374A67',
   },
   fonts: {
     regular: 'Poppins_400Regular',

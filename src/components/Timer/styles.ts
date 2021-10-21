@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
-import theme from '../../global/styles/theme';
+import { RectButton } from 'react-native-gesture-handler';
 
-export const Container = styled.View`
+export const Container = styled(RectButton)`
   background-color: ${({ theme }) => theme.colors.background};
   align-items: center;
   justify-content: center;
