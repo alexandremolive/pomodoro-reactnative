@@ -1,8 +1,7 @@
 import styled from "styled-components/native";
 import { Feather } from '@expo/vector-icons'
-import { BorderlessButton } from "react-native-gesture-handler";
 
-export const Container = styled(BorderlessButton)`
+export const Container = styled.TouchableOpacity`
   background-color: ${({ theme }) => theme.colors.background};
   align-items: center;
   justify-content: center;

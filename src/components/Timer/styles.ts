@@ -13,6 +13,8 @@ export const Header = styled.View`
   padding: 18px;
   margin: -150px auto 0;
   border-radius: 10px;
+  height: 250px;
+  width: 250px;
 `;
 
 export const Time = styled.Text`

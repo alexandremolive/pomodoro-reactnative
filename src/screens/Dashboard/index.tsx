@@ -40,6 +40,21 @@ export function Dashboard() {
     setTimeBreak(Number(item))
   }
 
+  const updateTimer = () => {
+    setSessionDisplay(prevSession => prevSession - 1)
+  }
+
+  const toggleInterval = (seconds: number) => {
+      setSessionDisplay(seconds);
+  }
+
+  const resetTimer = () => {
+    setSessionDisplay(25);
+    setSession(25);
+    setTimeBreak(5);
+
+  }
+
   return (
     <Container>
       <Header>
@@ -47,6 +62,11 @@ export function Dashboard() {
       </Header>
       <Timer
         sessionDisplay={sessionDisplay}
+        timeBreak={timeBreak}
+        updateTimer={updateTimer}
+        toggleInterval={toggleInterval}
+        resetSession={resetTimer}
+        session={session}
       />
       <Field>
         <SessionButton
