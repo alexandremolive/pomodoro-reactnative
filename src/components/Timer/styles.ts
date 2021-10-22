@@ -11,9 +11,9 @@ export const Header = styled.View`
   align-items: center;
   justify-content: center;
   padding: 18px;
-  margin: -150px auto 0;
+  margin: -120px auto 0;
   border-radius: 10px;
-  height: 250px;
+  height: 300px;
   width: 250px;
 `;
 

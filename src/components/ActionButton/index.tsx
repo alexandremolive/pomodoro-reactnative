@@ -4,13 +4,11 @@ import {
   Container,
   Icon,
 } from './styles';
-
 interface Props {
   name: string;
   onPress: () => void;
   isPLaying: boolean;
-
-}
+};
 
 export function ActionButton({
   name,
@@ -25,4 +23,4 @@ export function ActionButton({
       <Icon name={name} />
     </Container>
   )
-}
+};
