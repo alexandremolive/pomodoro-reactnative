@@ -12,7 +12,7 @@ import {
 import theme from './src/global/styles/theme'
 
 import { Dashboard } from './src/screens/Dashboard';
-import {TimeSelect} from './src/screens/TimeSelect';
+
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -26,7 +26,7 @@ export default function App() {
   }
   return (
     <ThemeProvider theme={theme}>
-      <TimeSelect />
+      <Dashboard />
     </ThemeProvider>
 
   );

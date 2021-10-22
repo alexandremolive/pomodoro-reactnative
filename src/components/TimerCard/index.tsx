@@ -6,13 +6,19 @@ import {
 } from './styles';
 
 interface Props {
-  item: number;
+  item: string;
+  closeModal: (item: string) => void;
 }
 
-export function TimerCard({ item }: Props) {
+export function TimerCard({
+  item,
+  closeModal,
+}: Props) {
   return (
-    <Container >
-      <Time>{item.toString().padStart(2, "0")}</Time>
+    <Container
+      onPress={()=> closeModal(item)}
+    >
+      <Time>{item.padStart(2, "0")}</Time>
     </Container>
   )
 }

@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { getBottomSpace } from 'react-native-iphone-x-helper'
+
 
 export const Container = styled.View`
   flex: 1;
@@ -19,11 +19,7 @@ export const Title = styled.Text`
 font-family: ${({ theme }) => theme.fonts.medium};
 color: ${({ theme }) => theme.colors.shape};;
 font-size: 36px;
+text-align: center;
+text-align: center;
 `;
 
-export const TimerRoulette = styled.FlatList.attrs({
-  showsVerticalScrollIndicator: false,
-  contentContainerStyle: {
-  paddingBottom: getBottomSpace()
-}
-})``;

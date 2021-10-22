@@ -5,10 +5,14 @@ import {
   Icon,
 } from './styles';
 
-export function ActionButton(){
+interface Props {
+  name: string;
+}
+
+export function ActionButton({ name }: Props) {
   return (
     <Container>
-      <Icon name="play"/>
+      <Icon name={name} />
     </Container>
   )
 }

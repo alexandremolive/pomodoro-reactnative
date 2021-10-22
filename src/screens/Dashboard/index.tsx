@@ -1,33 +1,78 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Modal } from 'react-native'
 
 import {
   Container,
   Header,
   Title,
   Field,
-  Footer,
 } from './styles'
 
 import { Timer } from '../../components/Timer';
-import { TimePickerButton } from '../../components/TimePickerButton'
-import { ActionButton } from '../../components/ActionButton'
+import { SessionButton } from '../../components/SessionButton'
+import { BreakButton } from '../../components/BreakButton'
+import { TimeSelectSession } from '../TimeSelectSession/';
+import { TimeSelectBreak } from '../TimeSelectBreak/';
 
 export function Dashboard() {
+  const [openModalSession, setOpenModalSession] = useState(false)
+  const [session, setSession] = useState(25)
+  const [openModalBreak, setOpenModalBreak] = useState(false)
+  const [timeBreak, setTimeBreak] = useState(5)
+  const [sessionDisplay, setSessionDisplay] = useState(25)
+
+  const handleOpenModalSession = () => {
+    setOpenModalSession(true)
+  }
+
+  const handleCloseModalSession = (item: string) => {
+    setOpenModalSession(false)
+    setSession(Number(item))
+    setSessionDisplay(Number(item))
+  }
+
+  const handleOpenModalBreak = () => {
+    setOpenModalBreak(true)
+  }
+
+  const handleCloseModalBreak = (item: string) => {
+    setOpenModalBreak(false)
+    setTimeBreak(Number(item))
+  }
+
   return (
     <Container>
       <Header>
         <Title>Pomodoro</Title>
       </Header>
-      <Timer />
+      <Timer
+        sessionDisplay={sessionDisplay}
+      />
       <Field>
-        <TimePickerButton />
-        <TimePickerButton />
+        <SessionButton
+          openModal={handleOpenModalSession}
+          session={session}
+        />
+        <BreakButton
+          openModal={handleOpenModalBreak}
+          TimeBreak={timeBreak}
+
+        />
       </Field>
-      <Footer>
-        <ActionButton />
-        <ActionButton />
-        <ActionButton />
-      </Footer>
+
+      <Modal visible={openModalSession}>
+        <TimeSelectSession
+          closeModal={handleCloseModalSession}
+        />
+
+
+      </Modal>
+      <Modal visible={openModalBreak}>
+        <TimeSelectBreak
+          closeModal={handleCloseModalBreak}
+        />
+
+      </Modal>
     </Container >
   )
 }
