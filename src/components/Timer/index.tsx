@@ -52,12 +52,12 @@ export function Timer({
   };
 
   useEffect(() => {
-    if (sessionDisplay < 0 && isSession === true) {
+    if (sessionDisplay === 0 && isSession === true) {
       setIsSession(false);
       toggleInterval(timeBreak);
       Vibration.vibrate()
     }
-    if (sessionDisplay < 0 && isSession === false) {
+    if (sessionDisplay === 0 && isSession === false) {
       setIsSession(true);
       toggleInterval(session);
       Vibration.vibrate([400, 400, 400])
